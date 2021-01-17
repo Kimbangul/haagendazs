@@ -1,0 +1,288 @@
+@charset "utf-8";
+
+// font start
+@font-face {
+    font-family: 'IBMPlexSansKR-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// font end
+// var start
+
+$max-width: 1280px;
+$key-color: #731b43;
+$img-width: 300px;
+$small-img-width: 170px;
+
+// var end
+// normalize
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+/* lib start */
+
+img {
+    display: block;
+}
+
+.con {
+    width: 100%;
+}
+
+.height-100p {
+    height: 100%;
+}
+
+.img-box {
+    img {
+        width: 100%;
+    }
+}
+
+.block {
+    display: block;
+}
+
+
+.bold {
+    font-style: bold;
+}
+
+.normal {
+    font-style: normal;
+}
+
+.plex-bold {
+    font-family: 'IBMPlexSansKR-Bold', sans-serif;
+}
+
+.plex-medium {
+    font-family: 'IBMPlexSansKR-Medium', sans-serif;
+}
+
+.plex-normal {
+    font-family: 'IBMPlexSansKR-Regular', sans-serif;
+}
+
+.nanumsquare {
+    font-family: 'NanumSquare', sans-serif !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-jc-c {
+    justify-content: center;
+}
+
+.flex-jc-a {
+    justify-content: space-around;
+}
+
+.flex-jc-b {
+    justify-content: space-between;
+}
+
+.flex-ai-c {
+    align-items: center;
+}
+
+.flex-d-c {
+    flex-direction: column;
+}
+
+.flex-1-0-0 {
+    flex: 1 0 0;
+}
+
+.title{
+    opacity: 70%;
+    font-family: 'IBMPlexSansKR-Bold', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: $key-color;
+
+}
+
+.subtitle{
+    font-family: 'NanumSquare', sans-serif;
+    font-weight: bold;
+    font-size: 3.6rem;
+}
+
+/* lib end */
+
+html,
+body {
+    font-size: 10px;
+    font-family: 'NanumSquare', sans-serif !important;
+    color: #5d5454;
+}
+
+// header start
+
+header {
+    &>div.row {
+        div.logo {
+            width: 180px;
+            height: 80px;
+            margin: 30px 0;
+        }
+    }
+
+    &>nav#menu {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        max-width: $max-width;
+        position: relative;
+
+        &>ul>li {
+
+            &>a {
+                color: $key-color;
+                opacity: 70%;
+
+
+                &:hover {
+                    opacity: 100%;
+                }
+            }
+
+            // depth 1
+            &>a {
+                padding: 20px 40px;
+                font-size: 1.8rem;
+            }
+
+        }
+
+        // sns menu
+
+        &>ul.sns-menu {
+
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            &>li {
+
+                &>a {
+                    font-size: 2rem;
+                    padding: 0 12px;
+                }
+
+                &:last-child>a {
+                    padding-right: 0;
+                }
+
+            }
+
+        }
+
+
+    }
+
+
+}
+
+// header end
+// slider start
+
+section#slide {
+    width: 100%;
+    height: 700px;
+    background-color:#ddc1c1;
+}
+
+// slider end
+
+// best item start
+
+section#best-items{
+    margin: 100px 0;
+    font-size: 1.4rem;
+
+    & > div.con{
+        margin-top: 35px;
+        height: 700px;
+        background-color: rgba(200,200,200,0.2);
+        
+
+        & > div.row{
+            max-width: $max-width;
+            margin: 0 auto; 
+            padding: 20px 0;
+            position: relative;
+
+            & > div.img-con{
+                position: relative;
+                width: $img-width;
+                height: $img-width;
+                margin-right: 72px;
+
+
+                & > div.img-box{  
+                    width: $img-width;
+                    height: $img-width; 
+                    position: absolute; 
+                    top: 0;
+                    left: 0;                  
+
+    
+                    & > img{
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;    
+
+
+                    }
+
+                    &:last-child{
+                        width: $small-img-width;
+                        height: $small-img-width;
+                        top: unset;
+                        bottom: 0;
+                        left: 60%;
+                    }
+
+
+                }
+
+            }
+
+
+            
+
+        }
+
+    }
+
+    
+    
+
+}
+
+// best item end
