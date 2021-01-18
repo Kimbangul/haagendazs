@@ -96,12 +96,17 @@ img {
   font-family: 'IBMPlexSansKR-Bold', sans-serif;
   font-size: 3rem;
   text-align: center;
-  color: #731b43; }
+  color: #731b43;
+  margin-bottom: 35px; }
 
 .subtitle {
   font-family: 'NanumSquare', sans-serif;
   font-weight: bold;
   font-size: 3.6rem; }
+
+.link-btn > a {
+  border: 1px solid #731b43;
+  padding: 8px 14px; }
 
 /* lib end */
 html,
@@ -146,8 +151,6 @@ section#best-items {
   margin: 100px 0;
   font-size: 1.4rem; }
   section#best-items > div.con {
-    margin-top: 35px;
-    height: 700px;
     background-color: rgba(200, 200, 200, 0.2); }
     section#best-items > div.con > div.row {
       max-width: 1280px;
@@ -167,13 +170,47 @@ section#best-items {
           left: 0; }
           section#best-items > div.con > div.row > div.img-con > div.img-box > img {
             width: 100%;
-            height: 100%;
-            position: absolute; }
+            height: 100%; }
           section#best-items > div.con > div.row > div.img-con > div.img-box:last-child {
             width: 170px;
             height: 170px;
             top: unset;
             bottom: 0;
             left: 60%; }
+      section#best-items > div.con > div.row > div.text-box > p {
+        margin: 22px 0 40px 0; }
+      section#best-items > div.con > div.row:nth-of-type(2) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse; }
+        section#best-items > div.con > div.row:nth-of-type(2) > div.img-con {
+          margin: 0 0 0 72px; }
+          section#best-items > div.con > div.row:nth-of-type(2) > div.img-con > div.img-box:last-child {
+            left: unset;
+            right: 60%; }
+      section#best-items > div.con > div.row:nth-of-type(3) {
+        margin: 100px auto;
+        padding: 0; }
+        section#best-items > div.con > div.row:nth-of-type(3) > div.img-con {
+          width: auto;
+          height: auto;
+          margin: 0 0 40px 0; }
+          section#best-items > div.con > div.row:nth-of-type(3) > div.img-con > div.img-box {
+            position: static;
+            width: 170px;
+            height: 170px; }
+            section#best-items > div.con > div.row:nth-of-type(3) > div.img-con > div.img-box:nth-of-child(2) {
+              margin: 0 45px; }
+
+section#store > div.row {
+  max-width: 1280px;
+  margin: 0 auto; }
+  section#store > div.row > div.img-box {
+    width: 450px;
+    height: 300px;
+    background-color: rgba(200, 200, 200, 0.2); }
+    section#store > div.row > div.img-box:last-child {
+      background-color: rgba(200, 200, 200, 0.4); }
 
 /*# sourceMappingURL=style.css.map */
