@@ -26,7 +26,8 @@
 // var start
 
 $max-width: 1280px;
-$key-color: #731b43;
+$key-color: #5d5454;
+// $key-color: #731b43;
 $img-width: 300px;
 $small-img-width: 170px;
 
@@ -106,6 +107,10 @@ img {
     justify-content: space-between;
 }
 
+.flex-jc-e{
+    justify-content: flex-end;
+}
+
 .flex-ai-c {
     align-items: center;
 }
@@ -134,7 +139,11 @@ img {
 }
 
 .link-btn{
+
+    display: inline-block;
+
     & > a{
+        font-size: 1.4rem;
         border: 1px solid $key-color;
         padding: 8px 14px;
     }
@@ -220,6 +229,7 @@ header {
 
 section#slide {
     width: 100%;
+    
     height: 700px;
     background-color:#ddc1c1;
 }
@@ -373,12 +383,93 @@ section#store{
 // startup info start
 
     section#start-up{
-        & > div.row{
 
-            
+        // padding-right: 200px;
+
+        & > div.con{
+
+            max-width:960px;
+            margin: 200px auto;
+            padding:80px 0 80px 100px;
+            background-color: rgba(200,200,200,0.2);
+            align-items: flex-end;
+            transform: translateX(50%);
+            & > div.text-box{
+                align-items: flex-end;
+
+                &> h3.title{
+                    display: inline-block;
+                    text-align: right;
+                    color: #5d5454;
+                }
+
+                & > div.link-btn > a{
+                    border: 1px solid #5d5454;
+                }
+            }            
+
         }
 
 
     }
 
 // startup info end
+// SNS start
+
+section#sns{
+
+    margin-bottom: 200px;
+
+    & > div.con{        
+        & > ul.sns-menu {
+
+            &>li {
+
+                &>a {
+            font-size: 5rem;
+            padding: 0 12px;
+        }
+    }
+
+}
+
+
+    }
+
+}
+
+// SNS end
+// footer start
+
+    footer{
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid  rgba(192, 192, 192, 0.25);
+        box-shadow: 0 -3px 5px rgba(192, 192, 192, 0.25);
+        font-size: 1.2em;
+
+        & > div.con{
+            padding: 50px 0;
+            max-width: $max-width;
+
+
+            & > div.logo{
+                width: 120px;
+            }
+           
+            & > ul.footer-menu{
+                padding-top: 25px;
+                padding-bottom: 48px;
+               
+
+                & > li > a{
+                    padding: 10px 24px;
+                }
+            }
+           
+
+        }
+
+    }
+
+// footer end
