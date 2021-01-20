@@ -11,8 +11,9 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">  
   <script src="js/script.js"></script>
 </head>
 
@@ -27,17 +28,45 @@
       </div>
     </div>
    
-    <nav id="menu">
-      <ul class="flex flex-jc-c plex-bold">
-        <li><a href="#">BRAND</a></li>
-        <li><a href="#">MENU</a></li>
-        <li><a href="#">STORE</a></li>
-        <li><a href="#">CONTACT</a></li>
+    <nav id="menu" class=" flex flex-jc-c">
+      <ul class="depth-1 flex flex-jc-c plex-bold">
+        <li><a href="#">BRAND</a>
+        </li>
+        <li><a href="#">MENU</a>
+          <ul class="depth-2">
+            <li><a href="#">파인트</a></li>
+            <li><a href="#">미니 컵</a></li>
+            <li><a href="#">스틱바</a></li>
+            <li><a href="#">콘</a></li>
+            <li><a href="#">아이스크림 드링크</a></li>
+            <li><a href="#">크리에이션 메뉴</a></li>
+            <li><a href="#">벌크(업소용)</a></li>
+          </ul>
+        </li>
+        <li><a href="#">STORE</a>
+          <ul class="depth-2">
+            <li><a href="#">온라인 스토어</a></li>
+            <li><a href="#">오프라인 스토어</a></li>
+          </ul>
+        </li>
+        <li><a href="#">CONTACT</a>
+          <ul class="depth-2">
+            <li><a href="#">업소문의</a></li>
+          </ul>
+        </li>
+
+        <ul class="sns-menu flex flex-jc-c flex-ai-c">
+          <li class="img-box"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+          <li class="img-box"><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+
+
       </ul>
-      <ul class="sns-menu flex flex-jc-c flex-ai-c">
-        <li class="img-box"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-        <li class="img-box"><a href="#"><i class="fab fa-instagram"></i></a></li>
-      </ul>
+
+      <div class="nav-bg">
+          
+      </div>
+
     </nav>
 
 

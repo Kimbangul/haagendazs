@@ -121,34 +121,88 @@ html,
 body {
   font-size: 10px;
   font-family: 'NanumSquare', sans-serif !important;
-  color: #5d5454; }
+  color: #5d5454;
+  overflow-x: hidden; }
 
 header > div.row div.logo {
   width: 180px;
   height: 80px;
-  margin: 30px 0; }
+  margin: 30px 0;
+  margin-bottom: 10px; }
 header > nav#menu {
   margin: 0 auto;
-  margin-bottom: 20px;
-  max-width: 1280px;
-  position: relative; }
-  header > nav#menu > ul > li > a {
-    color: #5d5454;
-    opacity: 70%; }
-    header > nav#menu > ul > li > a:hover {
-      opacity: 100%; }
-  header > nav#menu > ul > li > a {
-    padding: 20px 40px;
-    font-size: 1.8rem; }
-  header > nav#menu > ul.sns-menu {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  height: 67px;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.25);
+  -webkit-box-shadow: 0 3px 5px rgba(192, 192, 192, 0.25);
+          box-shadow: 0 3px 5px rgba(192, 192, 192, 0.25); }
+  header > nav#menu.on {
+    overflow: visible; }
+    header > nav#menu.on > ul.depth-1 > li > ul.depth-2, header > nav#menu.on > div.nav-bg {
+      max-height: 372px;
+      -webkit-transition: max-height 0.3s;
+      transition: max-height 0.3s; }
+    header > nav#menu.on > ul.depth-1 > li > ul.depth-2 {
+      opacity: 1;
+      -webkit-transition: max-height 0.3s 1s opacity 0.4s;
+      transition: max-height 0.3s 1s opacity 0.4s; }
+  header > nav#menu > ul.depth-1 {
+    padding: 20px 0;
+    position: relative;
+    width: 1280px; }
+    header > nav#menu > ul.depth-1 > ul.sns-menu {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%); }
+      header > nav#menu > ul.depth-1 > ul.sns-menu > li > a {
+        font-size: 2rem;
+        padding: 0 12px; }
+      header > nav#menu > ul.depth-1 > ul.sns-menu > li:last-child > a {
+        padding-right: 0; }
+  header > nav#menu > ul.depth-1 > li {
+    position: relative; }
+    header > nav#menu > ul.depth-1 > li > a {
+      color: #5d5454;
+      opacity: 70%; }
+      header > nav#menu > ul.depth-1 > li > a:hover {
+        opacity: 100%; }
+    header > nav#menu > ul.depth-1 > li > a {
+      padding: 20px 40px;
+      font-size: 1.8rem; }
+    header > nav#menu > ul.depth-1 > li > ul.depth-2 {
+      position: absolute;
+      width: 100%;
+      top: 120%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      z-index: 15;
+      padding: 20px 10px;
+      max-height: 0;
+      -webkit-transition: max-height 0.3s 1s opacity 0.4s;
+      transition: max-height 0.3s 1s opacity 0.4s;
+      overflow: hidden;
+      opacity: 0; }
+      header > nav#menu > ul.depth-1 > li > ul.depth-2 > li {
+        margin: 10px 0;
+        text-align: center; }
+  header > nav#menu > div.nav-bg {
+    width: 100%;
+    max-height: 0;
+    height: 300px;
     position: absolute;
-    right: 0;
-    top: 0; }
-    header > nav#menu > ul.sns-menu > li > a {
-      font-size: 2rem;
-      padding: 0 12px; }
-    header > nav#menu > ul.sns-menu > li:last-child > a {
-      padding-right: 0; }
+    z-index: -10;
+    top: 0;
+    left: 0;
+    background: #fff;
+    -webkit-transition: max-height 0.3s;
+    transition: max-height 0.3s; }
 
 section#slide {
   width: 100%;
