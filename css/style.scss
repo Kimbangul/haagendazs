@@ -22,6 +22,10 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+
 // font end
 // var start
 
@@ -87,8 +91,8 @@ img {
     font-family: 'IBMPlexSansKR-Regular', sans-serif;
 }
 
-.nanumsquare {
-    font-family: 'NanumSquare', sans-serif !important;
+.sans{
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .flex {
@@ -133,7 +137,7 @@ img {
 }
 
 .subtitle{
-    font-family: 'NanumSquare', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size: 3.6rem;
 }
@@ -151,10 +155,27 @@ img {
 
 /* lib end */
 
+// animation start
+
+@keyframes headerfix_ani{
+
+    from{
+        transform: translateY(-100%);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+
+
+}
+
+// animation end
+
 html,
 body {
     font-size: 10px;
-    font-family: 'NanumSquare', sans-serif !important;
+    font-family: 'Noto Sans KR', sans-serif !important;
     color: #5d5454;
     overflow-x: hidden;
 }
@@ -162,6 +183,35 @@ body {
 // header start
 
 header {
+
+            // fixed menu
+            &.fixed {
+
+                & > div.row{
+                    padding-bottom: 67px;
+                }
+
+                & > nav#menu {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    animation-name: headerfix_ani;
+                    animation-duration: 0.3s;
+                    animation-iteration-count: 1;
+
+                    & > ul.depth-1{
+                        div.logo{
+                            
+                        }
+
+                    }
+        
+                }
+
+            }
+            
+
+
     &>div.row {
         div.logo {
             width: 180px;
@@ -177,29 +227,14 @@ header {
         z-index: 30;
         width: 100%;
         height: 67px;
-        overflow: hidden;
-        background: #fff;
-        
+       
+        background: #fff;       
 
 
         border-bottom: 1px solid  rgba(192, 192, 192, 0.25);
         box-shadow: 0 3px 5px rgba(192, 192, 192, 0.25);
         
-        &.on{
-            overflow: visible;
 
-            & > ul.depth-1>li>ul.depth-2, & > div.nav-bg{                
-                max-height: 372px;
-               
-                transition: max-height 0.3s;
-                
-            }
-            & > ul.depth-1>li>ul.depth-2{
-                opacity: 1;
-                transition: max-height 0.3s 1s opacity 0.4s;
-            }
-
-        }
 
         & > ul.depth-1{
             padding: 20px 0;
@@ -229,6 +264,19 @@ header {
     
             }
 
+            & > div.logo{
+                width: 110px;  
+                height: auto;
+                position: absolute;   
+                top:50%;
+                left: -30px;
+                transform: translateY(-50%);   
+                visibility: hidden;
+                opacity: 0;
+                transition: left 0.3s opacity 0.3s;
+                
+            }
+
 
             
         }
@@ -245,6 +293,21 @@ header {
 
                 &:hover {
                     opacity: 100%;
+                    position: relative;
+
+                    &::after{
+                        content: " ";
+                        display: block;
+                        clear: both;                        
+                        width: 80%;
+                        height: 3px;
+                        background: $key-color;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        transform: translateX(-50%);
+                        
+                    }
                 }
             }
 
@@ -262,18 +325,19 @@ header {
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 15;
-                padding: 20px 10px;
-                max-height: 0;
-                transition: max-height 0.3s 1s opacity 0.4s;
-                overflow: hidden;
-                opacity: 0;
+                padding: 20px 10px;  
+                display: none;
+                font-family: 'Noto Sans KR', sans-serif;
                 
-
-                
+                            
 
                 & > li{
-                    margin: 10px 0;
+                    margin: 20px 0px;
                     text-align: center;
+
+                    & > a{
+                        font-size: 1.4rem;
+                    }
 
                 }
 
@@ -285,18 +349,17 @@ header {
 
        & > div.nav-bg{
             width: 100%;
-            max-height: 0;
-            height: 300px;
+            height: 360px;
             position: absolute;
             z-index: -10;
-            top: 0;
+            top: 100%;
             left: 0;
             background: #fff;
-            transition: max-height 0.3s;
+            display: none;
+
 
         }
 
-      
 
 
 

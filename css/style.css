@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @font-face {
   font-family: 'IBMPlexSansKR-Bold';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Bold.woff") format("woff");
@@ -53,8 +54,8 @@ img {
 .plex-normal {
   font-family: 'IBMPlexSansKR-Regular', sans-serif; }
 
-.nanumsquare {
-  font-family: 'NanumSquare', sans-serif !important; }
+.sans {
+  font-family: 'Noto Sans KR', sans-serif; }
 
 .flex {
   display: -webkit-box;
@@ -105,7 +106,7 @@ img {
   margin-bottom: 35px; }
 
 .subtitle {
-  font-family: 'NanumSquare', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: bold;
   font-size: 3.6rem; }
 
@@ -117,13 +118,39 @@ img {
     padding: 8px 14px; }
 
 /* lib end */
+@-webkit-keyframes headerfix_ani {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+@keyframes headerfix_ani {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
 html,
 body {
   font-size: 10px;
-  font-family: 'NanumSquare', sans-serif !important;
+  font-family: 'Noto Sans KR', sans-serif !important;
   color: #5d5454;
   overflow-x: hidden; }
 
+header.fixed > div.row {
+  padding-bottom: 67px; }
+header.fixed > nav#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation-name: headerfix_ani;
+          animation-name: headerfix_ani;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1; }
 header > div.row div.logo {
   width: 180px;
   height: 80px;
@@ -135,21 +162,10 @@ header > nav#menu {
   z-index: 30;
   width: 100%;
   height: 67px;
-  overflow: hidden;
   background: #fff;
   border-bottom: 1px solid rgba(192, 192, 192, 0.25);
   -webkit-box-shadow: 0 3px 5px rgba(192, 192, 192, 0.25);
           box-shadow: 0 3px 5px rgba(192, 192, 192, 0.25); }
-  header > nav#menu.on {
-    overflow: visible; }
-    header > nav#menu.on > ul.depth-1 > li > ul.depth-2, header > nav#menu.on > div.nav-bg {
-      max-height: 372px;
-      -webkit-transition: max-height 0.3s;
-      transition: max-height 0.3s; }
-    header > nav#menu.on > ul.depth-1 > li > ul.depth-2 {
-      opacity: 1;
-      -webkit-transition: max-height 0.3s 1s opacity 0.4s;
-      transition: max-height 0.3s 1s opacity 0.4s; }
   header > nav#menu > ul.depth-1 {
     padding: 20px 0;
     position: relative;
@@ -165,13 +181,38 @@ header > nav#menu {
         padding: 0 12px; }
       header > nav#menu > ul.depth-1 > ul.sns-menu > li:last-child > a {
         padding-right: 0; }
+    header > nav#menu > ul.depth-1 > div.logo {
+      width: 110px;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: left 0.3s opacity 0.3s;
+      transition: left 0.3s opacity 0.3s; }
   header > nav#menu > ul.depth-1 > li {
     position: relative; }
     header > nav#menu > ul.depth-1 > li > a {
       color: #5d5454;
       opacity: 70%; }
       header > nav#menu > ul.depth-1 > li > a:hover {
-        opacity: 100%; }
+        opacity: 100%;
+        position: relative; }
+        header > nav#menu > ul.depth-1 > li > a:hover::after {
+          content: " ";
+          display: block;
+          clear: both;
+          width: 80%;
+          height: 3px;
+          background: #5d5454;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%); }
     header > nav#menu > ul.depth-1 > li > a {
       padding: 20px 40px;
       font-size: 1.8rem; }
@@ -184,25 +225,22 @@ header > nav#menu {
               transform: translateX(-50%);
       z-index: 15;
       padding: 20px 10px;
-      max-height: 0;
-      -webkit-transition: max-height 0.3s 1s opacity 0.4s;
-      transition: max-height 0.3s 1s opacity 0.4s;
-      overflow: hidden;
-      opacity: 0; }
+      display: none;
+      font-family: 'Noto Sans KR', sans-serif; }
       header > nav#menu > ul.depth-1 > li > ul.depth-2 > li {
-        margin: 10px 0;
+        margin: 20px 0px;
         text-align: center; }
+        header > nav#menu > ul.depth-1 > li > ul.depth-2 > li > a {
+          font-size: 1.4rem; }
   header > nav#menu > div.nav-bg {
     width: 100%;
-    max-height: 0;
-    height: 300px;
+    height: 360px;
     position: absolute;
     z-index: -10;
-    top: 0;
+    top: 100%;
     left: 0;
     background: #fff;
-    -webkit-transition: max-height 0.3s;
-    transition: max-height 0.3s; }
+    display: none; }
 
 section#slide {
   width: 100%;
