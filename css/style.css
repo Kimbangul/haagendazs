@@ -238,7 +238,7 @@ header > nav#menu {
         margin: 20px 0px;
         text-align: center; }
         header > nav#menu > ul.depth-1 > li > ul.depth-2 > li > a {
-          font-size: 1.5rem; }
+          font-size: 1.4rem; }
         header > nav#menu > ul.depth-1 > li > ul.depth-2 > li:hover > a {
           font-weight: bold; }
   header > nav#menu > div.nav-bg {
@@ -256,8 +256,26 @@ header > nav#menu {
 
 section#slide {
   width: 100%;
-  height: 700px;
-  background-color: #ddc1c1; }
+  height: 700px; }
+  section#slide > div#slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    section#slide > div#slider > div {
+      width: 100%;
+      height: 100%;
+      background-color: #ddc1c1; }
+      section#slide > div#slider > div > .slick-track {
+        height: 100%; }
+        section#slide > div#slider > div > .slick-track > .slick-slide {
+          height: 100%;
+          position: relative; }
+          section#slide > div#slider > div > .slick-track > .slick-slide img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%); }
 
 section#best-items {
   margin: 100px 0;
