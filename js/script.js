@@ -49,7 +49,7 @@ $(document).ready(function () {
 
         }
 
-
+        fixHeader();
         $(window).scroll(fixHeader);
 
     }
@@ -97,13 +97,6 @@ $(document).ready(function () {
 
         function animation1() {
 
-            // var tween1 = TweenMax.to('#best-items > div.con > div.row > div.img-con > div.img-box', 1, {
-            //     x: "150%",
-            //     rotation: 180,                
-            // });
-
-            // 스크롤매직 씬 생성
-
             var revealElements = $('#best-items > div.con > div.row');
 
 
@@ -125,9 +118,65 @@ $(document).ready(function () {
             }
 
         }
+        
+        function animation2(){
+            
+
+            var scene2 = new ScrollMagic.Scene({
+                triggerElement: "section#sns",
+                triggerHook: 0.5, //viewport에 대해 상대적으로 어느 시점에서 보여줄 건지를 설정
+                offset: -200,
+                // duration: "100%",
+            })
+
+            .setClassToggle("section#sns > div.con > ul.sns-menu> li", "visible")
+            .addTo(controller) // 컨트롤러 등록                
+            .addIndicators();
+
+
+        }
+
+        function animation3(){
+            
+
+            var scene3 = new ScrollMagic.Scene({
+                triggerElement: "section#store",
+                triggerHook: 0.5, 
+                offset: -100,
+               
+            })
+
+            .setClassToggle("section#store > div.row", "visible")
+            .addTo(controller) // 컨트롤러 등록                
+            .addIndicators();
+
+
+        }
+
+        function animation4(){
+            
+
+            var scene4 = new ScrollMagic.Scene({
+                triggerElement: "section#start-up",
+                triggerHook: 0.5, 
+                offset: -350,
+               
+            })
+
+            .setClassToggle("section#start-up > div.con", "visible")
+            .addTo(controller) // 컨트롤러 등록                
+            .addIndicators();
+
+
+        }
 
         animation1();
+        animation2();
+        animation3();
+        animation4();
     }
+
+
 
 
 
@@ -136,5 +185,6 @@ $(document).ready(function () {
     fixHeader_init();
     mainSlide_init();
     scrollMagic_init();
+   
 
 });
