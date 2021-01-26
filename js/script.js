@@ -65,6 +65,7 @@ $(document).ready(function () {
                 autoplay: true,
                 autoplaySpeed: 5000,
                 dots: true,
+                fade: true,
                 prevArrow: "<button class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
                 nextArrow: "<button class='slick-next'>Next</button>",
                 dotsClass: "dots",
@@ -163,7 +164,7 @@ $(document).ready(function () {
                
             })
 
-            .setClassToggle("section#start-up > div.con", "visible")
+            .setClassToggle("section#start-up", "visible")
             .addTo(controller) // 컨트롤러 등록                
             .addIndicators();
 
