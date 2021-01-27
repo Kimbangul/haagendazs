@@ -34,7 +34,6 @@
 $max-width: 1280px;
 $key-color: #29030b;
 $point-color: #d73e5b;
-// $key-color: #731b43;
 $img-width: 300px;
 $small-img-width: 170px;
 
@@ -490,10 +489,10 @@ header {
             z-index: -10;
             top: 100%;
             left: 0;
-            // background-image: url(../img/menu.png);
+            background-image: url(../img/navbg.png);
             background-repeat: no-repeat;
             background-position: right top;
-            background-size: 17%;
+           // background-size: auto, 100%;
             background-color: rgba(255,255,255,0.95);
             border-bottom: 1px solid  rgba(192, 192, 192, 0.25);
             box-shadow: 0 3px 3px rgba(192, 192, 192, 0.25);
@@ -676,8 +675,7 @@ section#best-items{
         width: 100%;
         height: 40%;
         background-color: #f9f3f4;
-      //  background-image:  url("../img/strawberries-_-cream-1.png");
-
+     
     }
 
     & > div.con{
@@ -982,11 +980,9 @@ section#store{
             
 
             max-width:660px;
-           //margin: 200px auto;
             padding:80px 0 80px 70px;
             background-color: rgba(200,200,200,0.2);
             align-items: flex-end;
-            //transform: translateX(55%);
             background-image: url("../img/startup-info-bg.png");
             background-position: right center;
             background-size: cover;
@@ -1002,7 +998,6 @@ section#store{
                     display: inline-block;
                     font-weight: 400;
                     text-align: right;
-                    //color: #5d5454;
                      line-height: 3.5rem;
 
                 }
