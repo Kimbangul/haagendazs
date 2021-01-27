@@ -156,10 +156,10 @@ a, img {
         display: flex;
         align-items: center;
         font-size: 1.4rem;
-        border: 2px solid $key-color;
+        border: 1px solid $key-color;
         padding: 8px 14px;
         font-weight: 500;
-        transition: color 0.3s, width 0.3s;
+        transition: color 0.3s, width 0.3s, border 0.3s;
         position: relative;
         z-index: 0;
 
@@ -193,7 +193,7 @@ a, img {
             opacity: 0;           
             height: 100%;
             content: " ";
-            background-color: $key-color;
+            background-color: $point-color;
             transition: opacity 0.3s, width 0.5s;
             z-index: -1;
             
@@ -201,6 +201,7 @@ a, img {
 
         &:hover{
             color: #fff;
+            border-color: $point-color;
 
             &::after{
                 border-color: #fff;
@@ -1010,6 +1011,8 @@ section#store{
             }            
 
         }
+
+
 
 
     }

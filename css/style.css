@@ -121,11 +121,11 @@ a, img {
         -ms-flex-align: center;
             align-items: center;
     font-size: 1.4rem;
-    border: 2px solid #29030b;
+    border: 1px solid #29030b;
     padding: 8px 14px;
     font-weight: 500;
-    -webkit-transition: color 0.3s, width 0.3s;
-    transition: color 0.3s, width 0.3s;
+    -webkit-transition: color 0.3s, width 0.3s, border 0.3s;
+    transition: color 0.3s, width 0.3s, border 0.3s;
     position: relative;
     z-index: 0; }
     .link-btn > a::after {
@@ -159,12 +159,13 @@ a, img {
       opacity: 0;
       height: 100%;
       content: " ";
-      background-color: #29030b;
+      background-color: #d73e5b;
       -webkit-transition: opacity 0.3s, width 0.5s;
       transition: opacity 0.3s, width 0.5s;
       z-index: -1; }
     .link-btn > a:hover {
-      color: #fff; }
+      color: #fff;
+      border-color: #d73e5b; }
       .link-btn > a:hover::after {
         border-color: #fff; }
       .link-btn > a:hover::before {
