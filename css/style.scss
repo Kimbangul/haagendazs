@@ -32,7 +32,8 @@
 // var start
 
 $max-width: 1280px;
-$key-color: #5d5454;
+$key-color: #29030b;
+$point-color: #d73e5b;
 // $key-color: #731b43;
 $img-width: 300px;
 $small-img-width: 170px;
@@ -120,7 +121,7 @@ a, img {
 .title{
     opacity: 70%;   
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     color: $key-color;
     margin-bottom: 35px;
@@ -134,8 +135,7 @@ a, img {
 }
 
 .subtitle{
-    // font-family: 'IBMPlexSansKR-Regular', 'Noto Sans KR', sans-serif;
-    font-weight: 500;
+       font-weight: 600;
     font-size: 3.6rem;
 }
 
@@ -165,6 +165,7 @@ a, img {
 
         &::after {
             content: "→";
+            font-size: 1.8rem;
             margin-left: 10px;
             width: 27px;
             height: 27px;         
@@ -173,8 +174,9 @@ a, img {
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 2px solid #aaa;
+            border: 1px solid $key-color;
             border-radius: 100%;
+            transition: border 0.5s;
 
             & > *{
                 transform: translateY(5px);
@@ -199,6 +201,11 @@ a, img {
 
         &:hover{
             color: #fff;
+
+            &::after{
+                border-color: #fff;
+            }
+
 
             &::before{
                 width: 100%;
@@ -252,7 +259,7 @@ html,
 body {
     font-size: 10px;
     font-family: 'Montserrat','IBMPlexSansKR-Regular','Noto Sans KR', sans-serif;
-    color: #5d5454;
+    color:#29030b;
     overflow-x: hidden; 
 
 
@@ -302,6 +309,7 @@ header {
             margin: 30px 0;
             margin-bottom: 10px;
             transition: opacity 0.3s;
+            c
 
             &:hover{
                 opacity: 0.5;
@@ -344,10 +352,11 @@ header {
                         
                         font-size: 2rem;
                         padding: 0 12px;
-                        transition: opacity 0.3s;
+                        transition: opacity 0.3s, color 0.3s;
                     
                         &:hover{
                             opacity: 0.5;
+                            color: $point-color;
                         }
                     }
 
@@ -396,7 +405,7 @@ header {
                 color: $key-color;
                 position: relative;
                 opacity: 70%;
-                transition: opacity 0.3s;
+                transition: opacity 0.3s, color 0.3s;
                 padding: 20px 40px;
                 font-size: 1.8rem;
 
@@ -406,7 +415,7 @@ header {
                     clear: both;                        
                     width: 0%;
                     height: 3px;
-                    background: $key-color;
+                    background: $point-color;
                     position: absolute;
                     left: 50%;
                     bottom: 0;
@@ -421,6 +430,7 @@ header {
 
             &:hover > a {
                 opacity: 100%;
+                color: $point-color;
                 
 
                 &::after{
@@ -460,6 +470,7 @@ header {
                     &:hover{
                         & > a{
                             font-weight: bold;
+                            color: $point-color;
                         }
                     }
 
@@ -657,13 +668,14 @@ section#best-items{
 
     &::before{
         position: absolute;
-        top: 40%;
+        top: 35%;
         left: 0; 
         transform: translateY(-50%);
         content: " ";
         width: 100%;
-        height: 70%;
-        background-color: rgba(240, 240, 240, 0.3);
+        height: 40%;
+        background-color: #f9f3f4;
+      //  background-image:  url("../img/strawberries-_-cream-1.png");
 
     }
 
@@ -856,60 +868,75 @@ section#store{
        opacity: 0;
        transform: translateY(20px);
        transition: opacity 0.3s, transform 0.5s;
+  
 
        &.visible{
         opacity: 1;
         transform: translateY(0px);
        }
-        & > div.img-box{
-            width:450px;
-            height: 300px;
-            
-            
-            
 
-            &:first-child{
-                background-image: url("../img/Waffle-dream.png");
-                background-position: center center;
-                background-size: cover;      
-               
+       & > a{
+           width: 450px;
+           height: 300px;
+
+        &:first-of-type > div.img-box{
+            background-image: url("../img/Waffle-dream.png");
+        }
+
+        &:nth-of-type(2) > div.img-box{
+            background-image: url("../img/interior-5002256_1920.jpg");
+        }
+
+        &:hover{
+
+            & >  div.img-box{
+                opacity: 0.7;
+
+                & > div.text-box{
+                    background-color: rgba(255,255,255,0.7);
+                    color: $key-color;
+                    border: transparent;
+                }
             }
 
-            &:last-child{
-                background-image: url("../img/interior-5002256_1920.jpg");
-                background-position: center center;
-                background-size: cover; 
-            }      
+
+
+        }
+
+
+           
+        & > div.img-box{
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            background-size: cover; 
+            transition: opacity 0.3s;
+                    
+            
+
             
             & > div.text-box{
                 width: 200px;              
-                height: 200px;
-                
+                height: 200px;                
                 font-size: 3.4rem;
                 text-align: center;
                 line-height: 3.5rem;
-                color: #fff;              
+                color: #fff;      
+                border: 3px solid #fff;     
+                transition: background-color 0.3s, color 0.3s, border-color 0.3s;   
                 
+                                    
 
-                & > a{
-                    width: 100%;
-                    height: 100%;
-                    border: 3px solid #fff;
-                    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-                    
-                    &:hover{
-                        background-color: rgba(255,255,255,0.7);
-                        color: $key-color;
-                        border: transparent;
-                        
-                    }
-                }
+
                 
                 
             }
 
 
         }
+
+       }
+
 
     }
 }
@@ -974,7 +1001,7 @@ section#store{
                     display: inline-block;
                     font-weight: 400;
                     text-align: right;
-                    color: #5d5454;
+                    //color: #5d5454;
                      line-height: 3.5rem;
 
                 }
@@ -1010,14 +1037,14 @@ section#sns{
 
                 &.visible{
                     transform: translateY(0px);
-                    transition: transform 0.5s, opacity 0.3s;
+                    transition: transform 0.5s, opacity 0.3s, color 0.3s;
                     opacity: 1;
 
                     &:last-child{
                         transition: transform 0.5s 0.3s, opacity 0.3s 0.3s;
                     }
                     &:hover{
-   
+                        color: $point-color;
                     }
 
                     

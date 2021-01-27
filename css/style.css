@@ -94,9 +94,9 @@ a, img {
 .title {
   opacity: 70%;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
-  color: #5d5454;
+  color: #29030b;
   margin-bottom: 35px;
   -ms-user-select: none;
   -moz-user-select: -moz-none;
@@ -104,7 +104,7 @@ a, img {
   user-select: none; }
 
 .subtitle {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 3.6rem; }
 
 .link-btn {
@@ -121,7 +121,7 @@ a, img {
         -ms-flex-align: center;
             align-items: center;
     font-size: 1.4rem;
-    border: 2px solid #5d5454;
+    border: 2px solid #29030b;
     padding: 8px 14px;
     font-weight: 500;
     -webkit-transition: color 0.3s, width 0.3s;
@@ -130,6 +130,7 @@ a, img {
     z-index: 0; }
     .link-btn > a::after {
       content: "→";
+      font-size: 1.8rem;
       margin-left: 10px;
       width: 27px;
       height: 27px;
@@ -143,8 +144,10 @@ a, img {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center;
-      border: 2px solid #aaa;
-      border-radius: 100%; }
+      border: 1px solid #29030b;
+      border-radius: 100%;
+      -webkit-transition: border 0.5s;
+      transition: border 0.5s; }
       .link-btn > a::after > * {
         -webkit-transform: translateY(5px);
                 transform: translateY(5px); }
@@ -156,12 +159,14 @@ a, img {
       opacity: 0;
       height: 100%;
       content: " ";
-      background-color: #5d5454;
+      background-color: #29030b;
       -webkit-transition: opacity 0.3s, width 0.5s;
       transition: opacity 0.3s, width 0.5s;
       z-index: -1; }
     .link-btn > a:hover {
       color: #fff; }
+      .link-btn > a:hover::after {
+        border-color: #fff; }
       .link-btn > a:hover::before {
         width: 100%;
         opacity: 1;
@@ -207,7 +212,7 @@ html,
 body {
   font-size: 10px;
   font-family: 'Montserrat','IBMPlexSansKR-Regular','Noto Sans KR', sans-serif;
-  color: #5d5454;
+  color: #29030b;
   overflow-x: hidden; }
 
 header.fixed > div.row {
@@ -235,6 +240,7 @@ header > div.row div.logo {
   margin-bottom: 10px;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s; }
+  c
   header > div.row div.logo:hover {
     opacity: 0.5; }
 header > nav#menu {
@@ -261,10 +267,11 @@ header > nav#menu {
       header > nav#menu > ul.depth-1 > ul.sns-menu > li > a {
         font-size: 2rem;
         padding: 0 12px;
-        -webkit-transition: opacity 0.3s;
-        transition: opacity 0.3s; }
+        -webkit-transition: opacity 0.3s, color 0.3s;
+        transition: opacity 0.3s, color 0.3s; }
         header > nav#menu > ul.depth-1 > ul.sns-menu > li > a:hover {
-          opacity: 0.5; }
+          opacity: 0.5;
+          color: #d73e5b; }
       header > nav#menu > ul.depth-1 > ul.sns-menu > li:last-child > a {
         padding-right: 0; }
     header > nav#menu > ul.depth-1 > div.logo {
@@ -290,11 +297,11 @@ header > nav#menu {
         -ms-flex-align: center;
             align-items: center; }
     header > nav#menu > ul.depth-1 > li > a {
-      color: #5d5454;
+      color: #29030b;
       position: relative;
       opacity: 70%;
-      -webkit-transition: opacity 0.3s;
-      transition: opacity 0.3s;
+      -webkit-transition: opacity 0.3s, color 0.3s;
+      transition: opacity 0.3s, color 0.3s;
       padding: 20px 40px;
       font-size: 1.8rem; }
       header > nav#menu > ul.depth-1 > li > a::after {
@@ -303,7 +310,7 @@ header > nav#menu {
         clear: both;
         width: 0%;
         height: 3px;
-        background: #5d5454;
+        background: #d73e5b;
         position: absolute;
         left: 50%;
         bottom: 0;
@@ -313,7 +320,8 @@ header > nav#menu {
         -webkit-transition: opacity 0.3s, width 0.3s;
         transition: opacity 0.3s, width 0.3s; }
     header > nav#menu > ul.depth-1 > li:hover > a {
-      opacity: 100%; }
+      opacity: 100%;
+      color: #d73e5b; }
       header > nav#menu > ul.depth-1 > li:hover > a::after {
         opacity: 1;
         width: 80%; }
@@ -334,7 +342,8 @@ header > nav#menu {
         header > nav#menu > ul.depth-1 > li > ul.depth-2 > li > a {
           font-size: 1.4rem; }
         header > nav#menu > ul.depth-1 > li > ul.depth-2 > li:hover > a {
-          font-weight: bold; }
+          font-weight: bold;
+          color: #d73e5b; }
   header > nav#menu > div.nav-bg {
     width: 100%;
     height: 340px;
@@ -447,14 +456,14 @@ section#best-items {
   position: relative; }
   section#best-items::before {
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     content: " ";
     width: 100%;
-    height: 70%;
-    background-color: rgba(240, 240, 240, 0.3); }
+    height: 40%;
+    background-color: #f9f3f4; }
   section#best-items > div.con > div.row {
     max-width: 1280px;
     margin: 0 auto;
@@ -580,34 +589,36 @@ section#store > div.row {
     opacity: 1;
     -webkit-transform: translateY(0px);
             transform: translateY(0px); }
-  section#store > div.row > div.img-box {
+  section#store > div.row > a {
     width: 450px;
     height: 300px; }
-    section#store > div.row > div.img-box:first-child {
-      background-image: url("../img/Waffle-dream.png");
+    section#store > div.row > a:first-of-type > div.img-box {
+      background-image: url("../img/Waffle-dream.png"); }
+    section#store > div.row > a:nth-of-type(2) > div.img-box {
+      background-image: url("../img/interior-5002256_1920.jpg"); }
+    section#store > div.row > a:hover > div.img-box {
+      opacity: 0.7; }
+      section#store > div.row > a:hover > div.img-box > div.text-box {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: #29030b;
+        border: transparent; }
+    section#store > div.row > a > div.img-box {
+      width: 100%;
+      height: 100%;
       background-position: center center;
-      background-size: cover; }
-    section#store > div.row > div.img-box:last-child {
-      background-image: url("../img/interior-5002256_1920.jpg");
-      background-position: center center;
-      background-size: cover; }
-    section#store > div.row > div.img-box > div.text-box {
-      width: 200px;
-      height: 200px;
-      font-size: 3.4rem;
-      text-align: center;
-      line-height: 3.5rem;
-      color: #fff; }
-      section#store > div.row > div.img-box > div.text-box > a {
-        width: 100%;
-        height: 100%;
+      background-size: cover;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s; }
+      section#store > div.row > a > div.img-box > div.text-box {
+        width: 200px;
+        height: 200px;
+        font-size: 3.4rem;
+        text-align: center;
+        line-height: 3.5rem;
+        color: #fff;
         border: 3px solid #fff;
         -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
-        section#store > div.row > div.img-box > div.text-box > a:hover {
-          background-color: rgba(255, 255, 255, 0.7);
-          color: #5d5454;
-          border: transparent; }
 
 section#start-up {
   opacity: 0;
@@ -655,7 +666,6 @@ section#start-up {
         display: inline-block;
         font-weight: 400;
         text-align: right;
-        color: #5d5454;
         line-height: 3.5rem; }
 
 section#sns {
@@ -671,16 +681,18 @@ section#sns {
     section#sns > div.con > ul.sns-menu > li.visible {
       -webkit-transform: translateY(0px);
               transform: translateY(0px);
-      -webkit-transition: opacity 0.3s, -webkit-transform 0.5s;
-      transition: opacity 0.3s, -webkit-transform 0.5s;
-      transition: transform 0.5s, opacity 0.3s;
-      transition: transform 0.5s, opacity 0.3s, -webkit-transform 0.5s;
+      -webkit-transition: opacity 0.3s, color 0.3s, -webkit-transform 0.5s;
+      transition: opacity 0.3s, color 0.3s, -webkit-transform 0.5s;
+      transition: transform 0.5s, opacity 0.3s, color 0.3s;
+      transition: transform 0.5s, opacity 0.3s, color 0.3s, -webkit-transform 0.5s;
       opacity: 1; }
       section#sns > div.con > ul.sns-menu > li.visible:last-child {
         -webkit-transition: opacity 0.3s 0.3s, -webkit-transform 0.5s 0.3s;
         transition: opacity 0.3s 0.3s, -webkit-transform 0.5s 0.3s;
         transition: transform 0.5s 0.3s, opacity 0.3s 0.3s;
         transition: transform 0.5s 0.3s, opacity 0.3s 0.3s, -webkit-transform 0.5s 0.3s; }
+      section#sns > div.con > ul.sns-menu > li.visible:hover {
+        color: #d73e5b; }
     section#sns > div.con > ul.sns-menu > li > a {
       font-size: 5rem;
       padding: 0 12px; }
