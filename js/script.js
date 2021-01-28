@@ -72,24 +72,29 @@ $(document).ready(function () {
                 draggable: true
 
             });
+            }
 
-        }
-
-
-        function slideBgAdd() {
-            var $targetSlide = $('section#slide > div#slider div.slide-box').has('img');
-
-            $targetSlide.each(function () {
-                var $slideImgSrc = $(this).find('img').attr('src');
-
-                $(this).css({
-                    "background": "url(" + $slideImgSrc + ")"
+            function SNSSlide() {
+                $('div#slider2').slick({
+                    slide: 'div',
+                    infinite: true,
+                    slidesToShow: 4,
+                    arrows: true,
+                    speed: 700,
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    dots: true,              
+                    prevArrow: "<button class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
+                    nextArrow: "<button class='slick-next'>Next</button>",
+                    dotsClass: "dots",
+                    draggable: true
+    
                 });
-            });
+
         }
 
-        slideBgAdd();
         mainSlide();
+        SNSSlide();
 
     }
 
@@ -130,7 +135,7 @@ $(document).ready(function () {
                 // duration: "100%",
             })
 
-            .setClassToggle("section#sns > div.con > ul.sns-menu> li", "visible")
+            .setClassToggle("section#sns", "visible")
             .addTo(controller) // 컨트롤러 등록                
             .addIndicators();
 
