@@ -7,6 +7,8 @@ $(document).ready(function () {
         var $naviMenu = $('header > nav#menu > ul.depth-1 > li');
         var $naviSubMenu = $('header > nav#menu > ul.depth-1 > li > ul.depth-2 ');
         var $menuBg = $('header > nav#menu > div.nav-bg');
+        var $mbNavi = $('nav#mb-menu div.menu-btn ');
+        var $mbMenu = $('nav#mb-menu > div.menu');
 
         function naviMenuOpen() {
             $($naviMenu).hover(
@@ -24,7 +26,28 @@ $(document).ready(function () {
             )
         }
 
+        function mbNaviMenuOpen(){         
+
+
+            $($mbNavi).click(function(e){
+            
+            e.preventDefault();
+                           
+            if (($mbNavi).hasClass('active')){
+                $($mbNavi).removeClass('active');
+                $($mbMenu).removeClass('active');
+            }
+            else{
+                $($mbNavi).addClass('active');
+                $($mbMenu).addClass('active');
+            }
+
+            });
+          
+        }
+
         naviMenuOpen();
+        mbNaviMenuOpen();
 
 
     }

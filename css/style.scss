@@ -50,6 +50,8 @@ $small-img-width: 250px;
 
 /* lib start */
 
+
+
 a,
 img {
     display: block;
@@ -225,6 +227,9 @@ img {
     -webkit-user-select: none;
     user-select: none;
 }
+
+
+
 
 /* lib end */
 
@@ -518,11 +523,13 @@ header {
 section#slide {
 
     width: 100%;
-
+    max-width: 1980px;
+    margin: 0 auto;
 
 
 
     &>div#slider {
+
 
         padding-bottom: 31%;
         position: relative;
@@ -595,11 +602,12 @@ section#slide {
             display: flex;
 
             &>li {
+
                 padding: 0 5px;
 
                 &.slick-active>button {
                     opacity: 100%;
-
+                    background: $point-color;
                     width: 12px;
                     height: 12px;
                 }
@@ -612,7 +620,7 @@ section#slide {
                     background: #fff;
                     border-radius: 100%;
                     outline: none;
-                    opacity: 70%;
+                    opacity: 80%;
                     font-size: 0;
                     cursor: pointer;
                     transition: opacity 0.3s;
@@ -671,17 +679,7 @@ section#best-items {
     font-size: 1.4rem;
     position: relative;
 
-    &::before {
-        position: absolute;
-        top: 35%;
-        left: 0;
-        transform: translateY(-50%);
-        content: " ";
-        width: 100%;
-        height: 40%;
-        background-color: #ececec;
 
-    }
 
     &>div.con {
 
@@ -696,7 +694,7 @@ section#best-items {
 
 
 
-            &:first-of-type {
+            &:first-of-type, &:nth-of-type(3) {
                 opacity: 0;
                 transform: translateX(-50px);
                 transition: transform 1s, opacity 1s;
@@ -797,10 +795,58 @@ section#best-items {
 
             }
 
-            &:nth-of-type(3) {
-                // row 3
-                margin: 100px auto;
+            &:nth-of-type(3){
+                
+                &>div.img-con {    
+    
+                    &>div.img-box:first-child {
+                        width: $img-width;
+                        height: $img-width;
+                        position: absolute;
+                        top: 0;
+                        left: 0;    
+    
+    
+                        &>img {                           
+                            height: auto;   
+    
+                        }    
+
+    
+    
+                    }
+
+                    &>div.img-box:last-child{
+                        bottom: -50px;
+                    }
+    
+                }
+
+            }
+
+            &:nth-of-type(4) {
+                // row 4
+                margin: 100px 0;
                 padding: 0;
+                max-width: none;
+                position: relative;
+                
+                &::before{
+                    content: " ";
+                    position: absolute;
+                    top: 45%;
+                    left: 0;
+                    transform: translateY(-50%);
+                    width: 100%;
+                    height: 40%;
+                    z-index: -1;
+                
+                    background-image: url(../img/Peanutbutter-Crunch-pattern.png);
+                    background-position: center center;
+                    background-size: 100%, 100%;
+                    background-repeat: no-repeat;
+                    opacity: 0.2;
+                }
 
 
 
@@ -818,6 +864,8 @@ section#best-items {
 
                         transform: translateY(80px);
                         transition: transform 1s, opacity 1s;
+
+                        
 
 
 
@@ -1066,15 +1114,15 @@ section#sns {
         opacity: 0;
 
 
-        &>div.slide-box {
-            width: 295px;
-            padding: 0 10px;
+        & div.slide-box {
+
 
             &>div.img-box {
                 width: 100%;
                 height: 0;
                 padding-bottom: 100%;
-                position: relative;
+                position: relative;               
+
 
                 &>a {
                     width: 100%;
@@ -1082,7 +1130,40 @@ section#sns {
                     position: absolute;
                     top: 0;
                     left: 0;
+
+                    & > img{
+                        transition: filter 0.3s;
+                    }
+
+                    &:hover{
+
+                        & > img{
+                            filter: brightness(0.6);
+                        }                        
+
+                        &::after{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            content: "\f004  9,999 \f27a  9,999";                     
+                            font-family: 'IBMPlexSansKR-Regular', 'Font Awesome 5 Free', 'Noto Sans KR', sans-serif;
+                            font-weight: 900;
+                            font-size: 1.5rem;
+                            word-spacing: 0.7rem;
+                            color: #fff;
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            
+                        }
+                    }
+
                 }
+
+
+                
 
             }
 
@@ -1276,3 +1357,299 @@ footer {
 }
 
 // footer end
+
+
+
+
+@media screen and (min-width: 769px){
+    
+.mb{
+    display: none;
+}
+}
+
+
+
+@media screen and (max-width: 768px){
+
+    .pc{
+        display: none;
+    }
+
+
+    
+// mb header start
+
+    header{
+    
+        padding-bottom: 70px; 
+    & nav#mb-menu{
+        width: 100%;
+        height: 70px;
+        padding: 0 20px;
+        z-index: 999;
+        position: fixed;
+        top : 0;
+        left : 0;
+        background-color: #fff;
+        border-bottom: 1px solid rgba(192, 192, 192, 0.25);
+        box-shadow: 0 3px 3px rgba(192, 192, 192, 0.25);
+        display: flex;
+
+        &  div.menu-btn{
+            width: 35px;
+            height: 100%;
+            position: relative;
+           
+            
+
+            & > a{
+                width: 100%;
+                height: 0;
+                padding-bottom: 75%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+
+
+
+                & > span.bar{
+                    display: inline-block;
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    top: 50%;
+                    left:0;
+                    transform: translateY(-50%);
+                    background-color: $key-color;
+                    transition: top 0.3s 0.3s, bottom 0.3s 0.3s, opacity 0.3s 0.3s, transform 0.3s;
+
+                    &:first-child{
+                        top: 0;
+                        transform: none;
+                    }
+
+                    &:last-child{
+                        top: 100%;
+                        transform: translateY(-100%);                      
+                    }
+
+                }
+               
+            }
+
+            &.active{
+                
+                & > a > span.bar{
+
+                    transition: top 0.3s, bottom 0.3s, opacity 0.3s, transform 0.3s 0.3s;
+
+                    &:first-child{
+                        top: 50%;
+                        transform: translateY(-50%) rotate(45deg);
+                        
+                    }
+
+                    &:nth-child(2){
+                        opacity: 0;
+
+                    }
+
+                    &:last-child{
+                        top: 50%;
+                        transform: translateY(-50%) rotate(-45deg);
+                       
+                    }
+
+                }
+            }
+
+
+        }
+
+        & > div.logo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 150px;
+            height: 100%;
+            z-index: -1;
+            
+
+            & > a{
+                width: 100%;
+                height: 100%;
+                padding: 10px 0;
+
+                & > img{
+                    margin: 0 auto;
+                    width: auto;
+                    height: 100%;
+                }
+            }
+        }
+
+        & > div.menu{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background-color: rgba(0,0,0,0.5);
+            visibility: hidden;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: visibility 0s 0.3s, opacity 0.3s;
+
+            &.active{
+               visibility: visible;
+                opacity: 1;
+                transition: visibility 0.3s, opacity 0.3s;
+
+                & > div.menu-list{
+                    left: 0;
+                    transition: left 0.5s, opacity 0.5s;
+                }
+
+            }
+
+            & > div.menu-list{
+                
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100%;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.95);
+                border-left: 1px solid rgba(192, 192, 192, 0.25);
+                box-shadow: 3px 0px 3px rgba(192, 192, 192, 0.25);
+                transition: left 0.7s, opacity 0.5s;
+
+    
+                & > div.menu-btn{     
+                    margin-left: auto; 
+                    width: 25px;
+                    height: 30px;
+    
+                    & > a > span.bar{
+    
+                        transition: top 0.3s, bottom 0.3s, opacity 0.3s, transform 0.3s 0.3s;
+    
+                        &:first-child{
+                            top: 50%;
+                            transform: translateY(-50%) rotate(45deg);
+                            
+                        }
+    
+                        &:nth-child(2){
+                            opacity: 0;
+    
+                        }
+    
+                        &:last-child{
+                            top: 50%;
+                            transform: translateY(-50%) rotate(-45deg);
+                           
+                        }
+    
+                    }
+                }
+    
+                & > ul.depth-1{
+    
+                    margin-top: 30px;
+                    width: 100%;
+                    height: 100%;
+                 
+              
+    
+        
+                    & > li{
+                        
+                        & > a{
+                            padding: 10px 0;
+                            border-bottom: 1px solid #29030b69;
+                        }
+                    }
+        
+        
+                    & ul.depth-2{
+                        padding: 10px 0;
+                        margin-left: 20px;
+        
+        
+                        & > li{
+        
+                            & > a{
+                                padding: 5px 0;
+                            }
+        
+                        }
+                    }
+        
+                    
+                & > ul.sns-menu {
+                    & > li{
+                        & > a{
+                            padding: 5px;
+                        }
+                    }
+        
+                }
+        
+                    
+                }
+            }
+        }
+
+ 
+
+
+    }
+    }
+
+ // mb header end
+
+//  mb slider start
+    section#slide {
+
+        &>div#slider {
+            padding-bottom: 50%;
+
+            & > div{
+
+             & > .slick-track{
+                 & > .slick-slide{
+                     & img{
+                         position: absolute;
+                         top: 0;
+                         width: auto;
+                         height: 100%;
+                         left: 50%;
+                         transform: translateX(-50%);
+                     }
+                 }
+             }
+
+            }
+
+            & > button.slick-arrow{
+                &.slick-next{
+                    right: 20px;
+                }
+
+                &.slick-prev{
+                    left: 20px;
+                }
+            }
+        }
+
+        
+    }
+
+    //mb  slider end
+}
+
