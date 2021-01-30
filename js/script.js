@@ -7,8 +7,9 @@ $(document).ready(function () {
         var $naviMenu = $('header > nav#menu > ul.depth-1 > li');
         var $naviSubMenu = $('header > nav#menu > ul.depth-1 > li > ul.depth-2 ');
         var $menuBg = $('header > nav#menu > div.nav-bg');
-        var $mbNavi = $('nav#mb-menu div.menu-btn ');
-        var $mbMenu = $('nav#mb-menu > div.menu');
+        var $mbMenuBtn = $('nav#mb-menu div.menu-btn ');
+        var $mbMenuCate = $('nav#mb-menu > div.menu');
+        var $mbMenuDepth1 = $('header nav#mb-menu > div.menu > div.menu-list > ul.depth-1 > li');
 
         function naviMenuOpen() {
             $($naviMenu).hover(
@@ -26,29 +27,56 @@ $(document).ready(function () {
             )
         }
 
-        function mbNaviMenuOpen(){         
+        function mbNaviMenuSlideOpen(){         
 
 
-            $($mbNavi).click(function(e){
+            $($mbMenuBtn).click(function(e){
             
             e.preventDefault();
                            
-            if (($mbNavi).hasClass('active')){
-                $($mbNavi).removeClass('active');
-                $($mbMenu).removeClass('active');
+            if (($mbMenuBtn).hasClass('active')){
+                $($mbMenuBtn).removeClass('active');
+                $($mbMenuCate).removeClass('active');
             }
             else{
-                $($mbNavi).addClass('active');
-                $($mbMenu).addClass('active');
+                $($mbMenuBtn).addClass('active');
+                $($mbMenuCate).addClass('active');
             }
 
             });
           
         }
 
-        naviMenuOpen();
-        mbNaviMenuOpen();
+        function mbNaviMenuListOpen(){
+            $($mbMenuDepth1).click(function(e){
 
+                var $mbMenuDepth2 = $(this).find('ul.depth-2');
+
+                if ($mbMenuDepth2.length > 0){
+                    e.preventDefault();
+
+                    if ($(this).hasClass('active')){
+                        $(this).removeClass('active');
+                        $mbMenuDepth2.stop().slideUp(300);
+                        
+                    }
+                    else{
+                     $(this).addClass('active');
+                     $mbMenuDepth2.stop().slideDown(300);
+                     $(this).siblings('li').removeClass('active').find('ul.depth-2').stop().slideUp(300);
+                    }
+
+                }
+
+
+
+                
+            });
+        }
+
+        naviMenuOpen();
+        mbNaviMenuSlideOpen();
+        mbNaviMenuListOpen();
 
     }
 
@@ -110,7 +138,19 @@ $(document).ready(function () {
                     prevArrow: "<button class='slick-prev'>Previous</button>", // 이전 화살표 모양 설정
                     nextArrow: "<button class='slick-next'>Next</button>",
                     dotsClass: "dots",
-                    draggable: true
+                    draggable: true,
+
+                    responsive: [
+                        {
+                            breakpoint: 769,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }
+
+
+
+                    ]
     
                 });
 
