@@ -27,24 +27,42 @@ $(document).ready(function () {
             )
         }
 
-        function mbNaviMenuSlideOpen(){         
+        function mbNaviMenuSlideOpenClose(){         
 
+
+            function mbNaviMenuSlideOpen(){
+                $($mbMenuBtn).addClass('active');
+                $($mbMenuCate).addClass('active');
+            }
+
+            function mbNaviMenuSlideClose(){
+                $($mbMenuBtn).removeClass('active');
+                $($mbMenuCate).removeClass('active');
+            }
 
             $($mbMenuBtn).click(function(e){
             
             e.preventDefault();
                            
             if (($mbMenuBtn).hasClass('active')){
-                $($mbMenuBtn).removeClass('active');
-                $($mbMenuCate).removeClass('active');
+                mbNaviMenuSlideClose();
             }
             else{
-                $($mbMenuBtn).addClass('active');
-                $($mbMenuCate).addClass('active');
+                mbNaviMenuSlideOpen();
             }
 
             });
-          
+
+
+
+            $('div.menu').click(function(e){
+   
+                if (!$('div.menu-list').has(e.target).length) {
+                    mbNaviMenuSlideClose();
+                }
+            
+            });
+
         }
 
         function mbNaviMenuListOpen(){
@@ -75,7 +93,7 @@ $(document).ready(function () {
         }
 
         naviMenuOpen();
-        mbNaviMenuSlideOpen();
+        mbNaviMenuSlideOpenClose();
         mbNaviMenuListOpen();
 
     }
@@ -146,8 +164,13 @@ $(document).ready(function () {
                             settings: {
                                 slidesToShow: 3
                             }
+                        },
+                        {
+                            breakpoint: 501,
+                            settings: {
+                                slidesToShow: 2
+                            }
                         }
-
 
 
                     ]
@@ -178,12 +201,8 @@ $(document).ready(function () {
                     })
 
                     .setClassToggle(revealElements[i], "visible")
-                    .addTo(controller) // 컨트롤러 등록                
-                    .addIndicators({
-                        name: "row " + (i + 1),
-                        colorStart: "#F6B352",
-                        colorTrigger: "#F6B352"
-                    });
+                    .addTo(controller); // 컨트롤러 등록                
+
             }
 
         }
@@ -199,8 +218,8 @@ $(document).ready(function () {
             })
 
             .setClassToggle("section#sns", "visible")
-            .addTo(controller) // 컨트롤러 등록                
-            .addIndicators();
+            .addTo(controller); // 컨트롤러 등록                
+           
 
 
         }
@@ -216,8 +235,8 @@ $(document).ready(function () {
             })
 
             .setClassToggle("section#store > div.row", "visible")
-            .addTo(controller) // 컨트롤러 등록                
-            .addIndicators();
+            .addTo(controller); // 컨트롤러 등록                
+            
 
 
         }
@@ -233,8 +252,8 @@ $(document).ready(function () {
             })
 
             .setClassToggle("section#start-up", "visible")
-            .addTo(controller) // 컨트롤러 등록                
-            .addIndicators();
+            .addTo(controller); // 컨트롤러 등록                
+          
 
 
         }
