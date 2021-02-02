@@ -451,7 +451,7 @@ section#slide {
       z-index: 5;
       width: auto;
       height: auto;
-      opacity: 50%; }
+      opacity: 100%; }
       section#slide > div#slider > button.slick-arrow::before {
         font-size: 50px;
         font-family: 'Nanum Myeongjo', 'IBMPlexSansKR-Regular', sans-serif; }
