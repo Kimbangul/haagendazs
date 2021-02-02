@@ -25,7 +25,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
 
 
 // font end
@@ -50,6 +51,10 @@ $small-img-width: 250px;
 
 /* lib start */
 
+::selection{
+    color:#fff;
+    background: $point-color;
+}
 
 
 a,
@@ -271,6 +276,13 @@ body {
 
 
 
+}
+
+body.prohibit-scroll{
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    touch-action: none;
 }
 
 // header start
@@ -523,7 +535,7 @@ header {
 section#slide {
 
     width: 100%;
-    max-width: 1980px;
+    max-width: 2500px;
     margin: 0 auto;
 
 
@@ -536,7 +548,7 @@ section#slide {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        outline: none;
+
 
         &.slick-dotted.slick-slider {
             margin-bottom: 0;
@@ -555,39 +567,39 @@ section#slide {
                 height: 100%;
 
                 &>.slick-slide {
+
+                    outline: none;
+                    &:focus{
+                        outline: none;
+                    }
+
+                    &:first-child{                       
+                            background-image: url('../img/slide/ban1.png');
+                     }
+                    &:nth-child(2){
+                        background-image: url('../img/slide/ban5.png');
+                    }
+
+                    &:nth-child(3){
+                        background-image: url('../img/slide/ban2.png');
+                    }
+                    &:nth-child(4){
+                        background-image: url('../img/slide/ban3.png');
+                    }
+
                     height: 100%;
                     position: relative;
-
-
-
-
-                    background-size: cover;
+                    background-size: 100% auto;
                     background-position: center center;
+                    background-repeat: no-repeat;
                     z-index: 1;
 
 
-                    &::before {
-                        content: ' ';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: transparent;
-                        z-index: -1;
-                        backdrop-filter: blur(20px);
-
-
-                    }
-
-
-
-                    & img {
+                    & a{
                         width: 100%;
-                        position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
+                        height: 100%;
                     }
+
                 }
             }
 
@@ -1683,6 +1695,8 @@ footer {
                 top: 0;
                 left: -100%;
                 width: 70%;
+                min-width: 250px;
+                overflow-x: auto;
                 height: 100%;
                 padding: 20px;
                 background-color: rgba(255, 255, 255, 0.95);
@@ -1739,6 +1753,10 @@ footer {
                         &.active{
 
                             & > a{
+
+                                color: $point-color;
+ 
+
                                 &::after{
                                     content: "-";
                                 }
@@ -1750,6 +1768,11 @@ footer {
                             position: relative;
                             padding: 15px 0;
                             border-bottom: 1px solid #29030b69;
+                            transition: color 0.3s;
+
+                            &:hover{
+                                color: $point-color;
+                            }
                             &::after{
                                 content: "+";
                                 font-size: 0.8em;
@@ -1791,6 +1814,10 @@ footer {
         
                             & > a{
                                 padding: 5px 0;
+
+                                &:hover{
+                                    font-weight: bold;
+                                }
                             }
         
                         }
@@ -1808,6 +1835,11 @@ footer {
                         
                         & > a{
                             padding: 5px;
+                            transition: color 0.3s;
+
+                            &:hover{
+                                color: $point-color;
+                            }
                             
                         }
                     }
@@ -1837,14 +1869,9 @@ footer {
 
              & > .slick-track{
                  & > .slick-slide{
-                     & img{
-                         position: absolute;
-                         top: 0;
-                         width: auto;
-                         height: 100%;
-                         left: 50%;
-                         transform: translateX(-50%);
-                     }
+
+                    background-size: auto 100%;
+
                  }
              }
 
@@ -1943,7 +1970,18 @@ footer {
 
     }
 
+
+
     // mb best item end
+
+
+    section#sns{
+        & > div#slider2{
+            & .slick-slide{
+                margin: 0 5px;
+            }
+        }
+    }
 
 }
 
@@ -2043,7 +2081,27 @@ $small-img-width:100px;
     section#slide {
 
         &>div#slider {
-            padding-bottom: 80%;
+            padding-bottom: 100%;
+
+            & > div{
+                & > .slick-track{
+                    & > .slick-slide{
+                     &:first-child{                       
+                        background-image: url('../img/slide/mb-ban1.png');
+                     }
+                    &:nth-child(2){
+                        background-image: url('../img/slide/mb-ban5.png');
+                    }
+
+                    &:nth-child(3){
+                        background-image: url('../img/slide/mb-ban2.png');
+                    }
+                    &:nth-child(4){
+                        background-image: url('../img/slide/mb-ban3.png');
+                    }
+                    }
+                }
+            }
 
             & > button.slick-arrow{
         
@@ -2221,14 +2279,27 @@ $small-img-width:100px;
 }
 
 @media screen and (max-width: 319px){
+
+
+
     
 html,
 body {
 
     min-width: 320px;
-    overflow-x: auto;
+   
+    
 
 
 
 }
+
+html{
+    overflow-x: scroll;
+}
+
+header nav#mb-menu{
+    min-width: 320px;
+}
+
 }

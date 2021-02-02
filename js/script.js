@@ -14,8 +14,6 @@ $(document).ready(function () {
         function naviMenuOpen() {
             $($naviMenu).hover(
                 function () {
-                    // console.log("on");
-                    // $(navi).addClass("on");
                     $($menuBg).stop().slideDown(350);
                     $($naviSubMenu).stop().slideDown(400);
 
@@ -33,11 +31,14 @@ $(document).ready(function () {
             function mbNaviMenuSlideOpen(){
                 $($mbMenuBtn).addClass('active');
                 $($mbMenuCate).addClass('active');
+                $('body').addClass('prohibit-scroll');
             }
+
 
             function mbNaviMenuSlideClose(){
                 $($mbMenuBtn).removeClass('active');
                 $($mbMenuCate).removeClass('active');
+                $('body').removeClass('prohibit-scroll');
             }
 
             $($mbMenuBtn).click(function(e){
@@ -178,6 +179,8 @@ $(document).ready(function () {
                 });
 
         }
+
+        
 
         mainSlide();
         SNSSlide();
