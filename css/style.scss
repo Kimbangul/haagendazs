@@ -35,7 +35,7 @@
 $max-width: 1280px;
 $key-color: #29030b;
 $point-color: #d73e5b;
-$img-width: 450px;
+$img-width: 400px;
 $small-img-width: 250px;
 
 // var end
@@ -131,7 +131,7 @@ img {
     font-weight: 500;
     text-align: center;
     color: $key-color;
-    margin-bottom: 35px;
+    margin-bottom: 120px;
     // prohibit drag
 
     -ms-user-select: none;
@@ -270,7 +270,8 @@ img {
 html,
 body {
     font-size: 10px;
-    font-family: 'Montserrat', 'IBMPlexSansKR-Regular', 'Noto Sans KR', sans-serif;
+    font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+    // 'IBMPlexSansKR-Regular'
     color: #29030b;
     overflow-x: hidden;
 
@@ -288,6 +289,7 @@ body.prohibit-scroll{
 // header start
 
 header {
+    
 
     // fixed menu
     &.fixed {
@@ -325,11 +327,11 @@ header {
         div.logo {
             width: 180px;
             height: 80px;
-            margin: 30px 0;
-            margin-bottom: 10px;
+            margin: 100px 0px 50px 0;
             transition: opacity 0.3s;
+            
 
-            c &:hover {
+            &:hover {
                 opacity: 0.5;
             }
         }
@@ -535,8 +537,9 @@ header {
 section#slide {
 
     width: 100%;
-    max-width: 2500px;
+    // max-width: 2500px;
     margin: 0 auto;
+    margin-top: 60px;
 
 
 
@@ -687,7 +690,7 @@ section#slide {
 // best item start
 
 section#best-items {
-    margin: 100px 0;
+    margin: 200px 0;
     font-size: 1.4rem;
     position: relative;
 
@@ -700,7 +703,7 @@ section#best-items {
             // row 1
             max-width: $max-width;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 70px 0;
             position: relative;
 
 
@@ -737,7 +740,7 @@ section#best-items {
                 position: relative;
                 width: $img-width;
                 height: $img-width;
-                margin-right: 140px;
+                margin-right: 200px;
                 flex-shrink: 0;
 
 
@@ -777,7 +780,7 @@ section#best-items {
 
                 &>p {
                     margin: 22px 0 40px 0;
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                     word-break: keep-all;
                 }
 
@@ -792,7 +795,7 @@ section#best-items {
 
                 // img
                 &>div.img-con {
-                    margin: 0 0 0 140px;
+                    margin: 0 0 0 200px;
 
                     &>div.img-box:last-child {
                         left: unset;
@@ -840,7 +843,7 @@ section#best-items {
 
             &:nth-of-type(4) {
                 // row 4
-                margin: 100px 0;
+                margin: 150px 0;
                 padding: 0;
                 max-width: none;
                 position: relative;
@@ -867,7 +870,7 @@ section#best-items {
                 &>div.img-con {
                     width: auto;
                     height: auto;
-                    margin: 0 0 40px 0;
+                    margin: 0 0 50px 0;
 
 
                     &>div.img-box {
@@ -934,6 +937,7 @@ section#best-items {
 
 // store start
 section#store {
+    padding: 150px 0 200px 0;
     &>div.row {
         max-width: $max-width;
         margin: 0 auto;
@@ -1032,7 +1036,9 @@ section#start-up {
         text-align: right;
         align-items: flex-end;
         width: 640px;
-        padding-right: 40px;
+        padding-right: 60px;
+
+       
 
         &>h3.subtitle {
             font-size: 2.9rem;
@@ -1074,6 +1080,7 @@ section#start-up {
                 font-weight: 400;
                 text-align: right;
                 line-height: 3.5rem;
+                margin-bottom: 35px;
 
             }
 
@@ -1091,13 +1098,12 @@ section#start-up {
 // SNS start
 
 section#sns {
-
-    margin-bottom: 200px;
+    padding: 150px 0 250px 0;
 
 
 
     &>div.con {
-        margin-top: 100px;
+        margin-top: 150px;
         &>ul.sns-menu {
 
             &>li {
@@ -1190,7 +1196,7 @@ section#sns {
         }
 
         & .slick-slide {
-            margin: 0 10px;
+            margin: 0 20px;
             outline: none;
 
             & :focus{
@@ -1203,7 +1209,7 @@ section#sns {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 15px 0;
+            margin: 50px 0;
 
             &>li {
                 padding: 0 5px;
@@ -1239,6 +1245,7 @@ section#sns {
             }
         }
 
+
         
         //  next,prev
 
@@ -1248,6 +1255,7 @@ section#sns {
             width: auto;
             height: auto;
             opacity: 80%;
+            top: 40%;
 
             &::before {
                 font-size: 50px;
@@ -1987,6 +1995,7 @@ footer {
 
 @media screen and (max-width: 700px){
    section#store{
+      
        & > div.row{
            width: 100%;
            & > a{
@@ -2175,6 +2184,7 @@ $small-img-width:100px;
     }
 
     section#store{
+       
         & > div.row{
             & > a{
                 & > div.img-box{
