@@ -1023,7 +1023,8 @@ section#store {
 section#start-up {
 
     opacity: 0;
-    margin: 200px auto;
+    margin: 200px auto 50px auto;
+
     transform: translateX(50px);
     transition: opacity 0.7s, transform 1s;
 
@@ -1051,7 +1052,7 @@ section#start-up {
 
 
             &:first-of-type {
-                margin-bottom: 30px;
+                margin-bottom: 50px;
             }
         }
     }
@@ -1424,12 +1425,12 @@ footer {
             
 
             & > div.row{
-                padding: 15px 20px;
+                padding: 70px 20px;
 
                 & > div.text-box{
 
                     & > h3.subtitle{
-                        font-size: 2.3rem;
+                        font-size: 2rem;
                     }
 
                     & > p{
@@ -1440,7 +1441,7 @@ footer {
                 & > div.img-con{
                     width: $img-width;
                     height: $img-width;
-                    margin-right: 70px;
+                    margin-right: 100px;
     
                     & > div.img-box{
                         width: 100%;
@@ -1455,7 +1456,7 @@ footer {
 
                 &:nth-of-type(2){
                     & > div.img-con{
-                        margin-left: 70px;
+                        margin-left: 100px;
                     }
                 }
 
@@ -1534,7 +1535,7 @@ footer {
             width: 100%;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 50px 20px;
 
             & > h3.subtitle{
                 font-size: 2.3rem;
@@ -1555,6 +1556,10 @@ footer {
 
     .pc{
         display: none;
+    }
+
+    .title{
+        margin-bottom: 100px;
     }
 
 
@@ -1842,6 +1847,7 @@ footer {
                     & > li{
                         
                         & > a{
+                            margin: 0 5px;
                             padding: 5px;
                             transition: color 0.3s;
 
@@ -1869,6 +1875,7 @@ footer {
 
 //  mb slider start
     section#slide {
+        margin-top: 0;
 
         &>div#slider {
             padding-bottom: 50%;
@@ -1905,18 +1912,20 @@ footer {
     $small-img-width: 150px;
 
     section#best-items{
+        margin: 150px 0;
+
         & > div.con {
             & > div.row{
                 padding: 0 20px;
-                margin-bottom: 70px;
+                margin-bottom: 170px;
                 flex-direction: column;
 
                 & > div.text-box{
-                    margin-top: 15px;
+                    margin-top: 35px;
                     text-align: center;
 
                     & > p{
-                        margin: 12px 0 30px 0;
+                        margin: 20px 0 50px 0;
                     }
                 }
 
@@ -2033,6 +2042,7 @@ $small-img-width:100px;
 
 .title{
     font-size: 2rem;
+    margin-bottom: 65px;
 }
 
 .link-btn{
@@ -2121,9 +2131,13 @@ $small-img-width:100px;
 
 
     section#best-items{
+
+        margin: 75px 0;
+
         & > div.con{
             & > div.row{
                 padding: 0 10px;
+                margin-bottom: 120px;
 
                 & > div.img-con{
                     width: $img-width;
@@ -2184,7 +2198,9 @@ $small-img-width:100px;
     }
 
     section#store{
-       
+        
+        padding: 70px 0 150px 0;
+
         & > div.row{
             & > a{
                 & > div.img-box{
@@ -2202,6 +2218,7 @@ $small-img-width:100px;
 
         div.con:nth-of-type(2){
             padding: 40px 0;
+            margin-bottom: 70px;
 
             & > div.text-box{
                 & > h3.title{
@@ -2212,12 +2229,17 @@ $small-img-width:100px;
         }
 
         & > div.text-box{
-            padding: 0 10px;
+            padding: 0px 10px;
+           
             & > h3.subtitle{
                 font-size: 1.7rem;
             }
             & > p{
                 font-size: 1.3rem;
+
+                &:first-of-type{
+                    margin-bottom: 70px;
+                }
             }
         }
     }
