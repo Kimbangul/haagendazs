@@ -471,6 +471,7 @@ section#best-items {
     max-width: 1280px;
     margin: 0 auto;
     padding: 70px 0;
+    padding-bottom: 130px;
     position: relative; }
     section#best-items > div.con > div.row:first-of-type, section#best-items > div.con > div.row:nth-of-type(3) {
       opacity: 0;
@@ -861,7 +862,7 @@ footer {
           box-shadow: 0 -3px 5px rgba(192, 192, 192, 0.25);
   font-size: 1.2em; }
   footer > div.con {
-    padding: 50px 0;
+    padding: 80px 0;
     max-width: 1280px; }
     footer > div.con > div.logo {
       width: 120px; }
@@ -905,8 +906,6 @@ footer {
 
   section#best-items > div.con > div.row {
     padding: 70px 20px; }
-    section#best-items > div.con > div.row > div.text-box > h3.subtitle {
-      font-size: 2rem; }
     section#best-items > div.con > div.row > div.text-box > p {
       font-size: 1.6rem; }
     section#best-items > div.con > div.row > div.img-con {
@@ -1298,7 +1297,10 @@ footer {
             width: 100px;
             height: 100px; }
       section#best-items > div.con > div.row > div.text-box > p {
-        font-size: 1.3rem; }
+        font-size: 1.3rem;
+        line-height: 2.4rem; }
+      section#best-items > div.con > div.row > div.text-box > h3.subtitle {
+        font-size: 2.2rem; }
       section#best-items > div.con > div.row:nth-of-type(3) > div.img-con {
         width: 200px;
         height: 200px; }
@@ -1333,7 +1335,8 @@ footer {
       section#start-up > div.text-box > h3.subtitle {
         font-size: 1.7rem; }
       section#start-up > div.text-box > p {
-        font-size: 1.3rem; }
+        font-size: 1.3rem;
+        line-height: 2.4rem; }
         section#start-up > div.text-box > p:first-of-type {
           margin-bottom: 70px; }
 
@@ -1342,7 +1345,7 @@ footer {
     section#sns > div#slider2 .slick-slide {
       margin: 0 2.5px; }
     section#sns > div#slider2 ul.dots {
-      margin: 7px 0; }
+      margin: 17px 0; }
       section#sns > div#slider2 ul.dots > li.slick-active > button {
         width: 6px;
         height: 6px; }
@@ -1356,8 +1359,7 @@ footer {
         padding: 0 7px; }
 
   footer > div.con {
-    padding: 20px 0;
-    padding-bottom: 25px; }
+    padding: 50px 0; }
     footer > div.con > div.logo {
       width: 100px; }
     footer > div.con > ul.footer-menu {

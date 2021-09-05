@@ -704,6 +704,7 @@ section#best-items {
             max-width: $max-width;
             margin: 0 auto;
             padding: 70px 0;
+            padding-bottom: 130px;
             position: relative;
 
 
@@ -1327,7 +1328,7 @@ footer {
     font-size: 1.2em;
 
     &>div.con {
-        padding: 50px 0;
+        padding: 80px 0;
         max-width: $max-width;
 
 
@@ -1430,7 +1431,7 @@ footer {
                 & > div.text-box{
 
                     & > h3.subtitle{
-                        font-size: 2rem;
+                        // font-size: 2rem;
                     }
 
                     & > p{
@@ -2138,6 +2139,7 @@ $small-img-width:100px;
             & > div.row{
                 padding: 0 10px;
                 margin-bottom: 120px;
+                
 
                 & > div.img-con{
                     width: $img-width;
@@ -2159,6 +2161,11 @@ $small-img-width:100px;
                 & > div.text-box{
                     & > p{
                         font-size: 1.3rem;
+                        line-height: 2.4rem;
+                    }
+
+                    & > h3.subtitle{
+                        font-size: 2.2rem;
                     }
                 }
 
@@ -2236,6 +2243,7 @@ $small-img-width:100px;
             }
             & > p{
                 font-size: 1.3rem;
+                line-height: 2.4rem;
 
                 &:first-of-type{
                     margin-bottom: 70px;
@@ -2253,7 +2261,7 @@ $small-img-width:100px;
             }
 
             ul.dots{
-                margin: 7px 0;
+                margin: 17px 0;
                 & > li{
 
                     &.slick-active{
@@ -2286,8 +2294,8 @@ $small-img-width:100px;
 
     footer{
         & > div.con{
-            padding: 20px 0;
-            padding-bottom: 25px;
+            padding: 50px 0;
+            // padding-bottom: 25px;
             & > div.logo{
                 width: 100px;
             }
