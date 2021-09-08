@@ -376,9 +376,14 @@ section#slide {
       width: auto;
       height: auto;
       opacity: 100%; }
+      section#slide > div#slider > button.slick-arrow.white::before {
+        color: #fff; }
       section#slide > div#slider > button.slick-arrow::before {
         font-size: 50px;
-        font-family: 'Nanum Myeongjo', 'IBMPlexSansKR-Regular', sans-serif; }
+        font-family: 'Nanum Myeongjo', 'IBMPlexSansKR-Regular', sans-serif;
+        color: #29030b;
+        transition: color 0.5s;
+        opacity: 0.7; }
       section#slide > div#slider > button.slick-arrow.slick-next {
         right: 30px; }
         section#slide > div#slider > button.slick-arrow.slick-next::before {

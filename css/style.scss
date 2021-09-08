@@ -660,9 +660,20 @@ section#slide {
             height: auto;
             opacity: 100%;
 
+            &.white{
+                &::before{
+                    color: #fff;
+                }
+            }
+
             &::before {
                 font-size: 50px;
                 font-family: 'Nanum Myeongjo', 'IBMPlexSansKR-Regular', sans-serif;
+                color: #29030b;
+                transition: color 0.5s;
+                opacity: 0.7;
+
+
             }
 
             &.slick-next {

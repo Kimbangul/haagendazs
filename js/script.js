@@ -125,7 +125,16 @@ $(document).ready(function () {
     }
 
     function mainSlide_init() {
+       
         function mainSlide() {
+
+            $('div#slider').on("init", function(e, slick){
+               if (slick.currentSlide === 0){
+                var mainSlideBtn = $('section#slide > div#slider > button.slick-arrow.slick-next, section#slide > div#slider > button.slick-arrow.slick-prev');
+                mainSlideBtn.addClass('white');
+               }
+            })
+
             $('div#slider').slick({
                 slide: 'div',
                 infinite: true,
@@ -142,6 +151,18 @@ $(document).ready(function () {
                 draggable: true
 
             });
+
+  
+
+            $('div#slider').on("afterChange", function(e, slick, currentSlide){
+                mainSlideBtn = $('section#slide > div#slider > button.slick-arrow.slick-next, section#slide > div#slider > button.slick-arrow.slick-prev');
+                if (currentSlide === 0){
+                    mainSlideBtn.addClass('white');
+                }
+                else{
+                    mainSlideBtn.removeClass('white');
+                }
+            })
             }
 
             function SNSSlide() {
