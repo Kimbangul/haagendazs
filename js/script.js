@@ -131,7 +131,9 @@ $(document).ready(function () {
             $('div#slider').on("init", function(e, slick){
                if (slick.currentSlide === 0){
                 var mainSlideBtn = $('section#slide > div#slider > button.slick-arrow.slick-next, section#slide > div#slider > button.slick-arrow.slick-prev');
+                var mainSlideDot = $('section#slide > div#slider > ul.dots > li > button');
                 mainSlideBtn.addClass('white');
+                mainSlideDot.addClass('white');
                }
             })
 
@@ -156,11 +158,14 @@ $(document).ready(function () {
 
             $('div#slider').on("afterChange", function(e, slick, currentSlide){
                 mainSlideBtn = $('section#slide > div#slider > button.slick-arrow.slick-next, section#slide > div#slider > button.slick-arrow.slick-prev');
+                mainSlideDot = $('section#slide > div#slider > ul.dots > li > button');
                 if (currentSlide === 0){
                     mainSlideBtn.addClass('white');
+                    mainSlideDot.addClass('white');
                 }
                 else{
                     mainSlideBtn.removeClass('white');
+                    mainSlideDot.removeClass('white');
                 }
             })
             }
