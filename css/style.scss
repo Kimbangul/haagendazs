@@ -265,6 +265,39 @@ img {
 
 }
 
+@mixin prevAni($px){
+    @keyframes slick-prev{
+        from {
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(#{$px});
+        }
+    }
+    &{
+        animation: slick-prev 1s ease-in-out 0s infinite alternate both;
+    }
+    
+}
+
+@mixin nextAni($px){
+    @keyframes slick-next{
+        from {
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(#{$px});
+        }
+    }
+
+    &{
+        animation: slick-next 1s ease-in-out 0s infinite alternate both;
+    }
+    
+}
+
+
+
 // animation end
 
 html,
@@ -682,6 +715,8 @@ section#slide {
 
             &.slick-next {
                 right: 30px;
+                @include nextAni(-20px);
+                
 
                 &::before {
                     content: ">";
@@ -690,7 +725,8 @@ section#slide {
 
             &.slick-prev {
                 left: 30px;
-
+                @include prevAni(20px);
+                animation: slick-prev 1s ease-in-out 0 infinite alternate both;
                 &::before {
                     content: "<";
 
@@ -1549,6 +1585,14 @@ footer {
 
         & > div#slider{
             &>button.slick-arrow {
+                &.slick-next{
+                    @include nextAni(-15px);
+                }
+
+                &.slick-prev{
+                    @include prevAni(15px);
+                }
+
                 &.slick-next::before, &.slick-prev::before{
                     font-size: 35px;
                 }
@@ -2037,10 +2081,12 @@ footer {
             &>button.slick-arrow {
                 &.slick-next {
                     right: 20px;
+                    @include nextAni(-10px);
                 }
 
                 &.slick-prev {
                     left: 20px;
+                    @include prevAni(10px);
                 }
 
                 &.slick-next::before, &.slick-prev::before{
